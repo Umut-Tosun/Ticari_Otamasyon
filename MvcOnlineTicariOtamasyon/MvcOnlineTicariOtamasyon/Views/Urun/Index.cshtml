@@ -1,0 +1,66 @@
+﻿@using MvcOnlineTicariOtamasyon.Models.Sınıflar
+@model List<Urun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Ürün ID</th>
+        <th>Ürün AD</th>
+        <th>Ürün Marka </th>
+        <th>Ürün Stok</th>
+        <th>Ürün AlisFiyat</th>
+        <th>Ürün SatisFiyat</th>
+        <th>Ürün Durum</th>
+        <th>Ürün Kategori</th>
+        <th>Ürün Görsel</th>
+        <th>Ürün Aktif-Pasif</th>
+        <th>Ürün Güncelle</th>
+    </tr>
+
+  
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.UrunID</td>
+                <td>@item.UrunAd</td>
+                <td>@item.Marka</td>
+                @if (item.Stok == 0)
+                {
+                    <td style="background-color:#ff0000;color:white">@item.Stok</td>
+                }
+                @if (item.Stok > 0)
+                {
+                    <td>@item.Stok</td>
+                }
+                <td>@item.AlisFiyat</td>
+                <td>@item.SatisFiyat</td>
+                @if (item.durum == true)
+                {
+                    <td> <span class="badge badge-success">Aktif</span></td>
+                }
+                @if (item.durum == false)
+                {
+                    <td> <span class="badge badge-danger">Pasif</span></td>
+                }
+                <td>@item.Kategori.KategoriAd</td>
+                <td>@item.UrunGorsel</td>
+                @if (item.durum == true)
+                {
+                    <td><a href="/Urun/UrunSil/@item.UrunID" class="btn btn-danger">Pasif Yap</a></td>
+                }
+                @if (item.durum == false)
+                {
+                    <td><a href="/Urun/UrunSil/@item.UrunID" class="btn btn-success">Aktif Yap</a></td>
+                }
+
+                <td><a href="/Urun/UrunGetir/@item.UrunID" class="btn btn-outline-primary">Ürün Güncelle</a></td>
+            </tr>
+                
+            }
+        </table>
+        <a href="/Urun/YeniUrun/" class="btn btn-outline-success">Yeni Ürün Ekle</a>
+

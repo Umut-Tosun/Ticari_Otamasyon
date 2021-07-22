@@ -1,0 +1,52 @@
+﻿@using MvcOnlineTicariOtamasyon.Models.Sınıflar
+@model List<Cariler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Cari ID</th>
+        <th>Cari AD</th>
+        <th>Cari Soyad</th>
+        <th>Cari Şehir</th>
+        <th>Cari Mail</th>
+        <th>Cari Durum</th>
+        <th>Aktif - Pasif</th>
+        <th>Güncelle</th>
+        <th>Satış Detayları</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CariID</td>
+            <td>@item.CariAd</td>
+            <td>@item.CariSoyad</td>
+            <td>@item.CariSehir</td>
+            <td>@item.CariMail</td>
+            @if (item.durum == true)
+            {
+                <td> <span class="badge badge-success">Aktif</span></td>
+            }
+            @if (item.durum == false)
+            {
+                <td> <span class="badge badge-danger">Pasif</span></td>
+            }
+            @if (item.durum == true)
+            {
+                <td><a href="/Cari/CariSil/@item.CariID" class="btn btn-danger">Pasif Yap</a></td>
+            }
+            @if (item.durum == false)
+            {
+                <td><a href="/Cari/CariSil/@item.CariID" class="btn btn-success">Aktif Yap</a></td>
+            }
+
+            <td><a href="/Cari/CariGetir/@item.CariID" class="btn btn-outline-primary">Cari Güncelle</a></td>
+            <td><a href="/Cari/MusteriSatis/@item.CariID" class="btn btn-outline-info">Satış Geçmişi</a></td>
+        </tr>
+    }
+</table>
+<a href="/Cari/CariEkle/" class="btn btn-outline-success">Yeni Cari Ekle</a>
+
+

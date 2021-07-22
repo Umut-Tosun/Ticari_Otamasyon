@@ -1,0 +1,41 @@
+﻿@model MvcOnlineTicariOtamasyon.Models.Sınıflar.Cariler
+@{
+    ViewBag.Title = "CariGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Cari Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("CariGuncelle", "Cari", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.CariID)
+
+    @Html.Label("Cari AD")
+    @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariAd, null, new { @class = "text-danger" })
+    <br />
+    <br />
+    @Html.Label("Cari Soyad")
+    @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariSoyad, null, new { @class = "text-danger" })
+    <br />
+    <br />
+    @Html.Label("Cari Şehir")
+    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariSehir, null, new { @class = "text-danger" })
+    <br />
+    <br />
+    @Html.Label("Cari Mail")
+    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariMail, null, new { @class = "text-danger" })
+    <br />
+    <br />
+    @Html.Label("Cari Durum")
+    @Html.TextBoxFor(x => x.durum, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.durum, null, new { @class = "text-danger" })
+    <br />
+    <br />
+    <button class="btn btn-outline-primary">Cari Güncelle</button>
+}
+
+

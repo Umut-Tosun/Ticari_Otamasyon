@@ -1,0 +1,41 @@
+﻿@using MvcOnlineTicariOtamasyon.Models.Sınıflar
+@model List<Faturalar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>Fatura ID</th>
+        <th>Fatura Seri No</th>
+        <th>Fatura Sıra No</th>
+        <th>Fatura Tarih</th>
+        <th>Fatura Saat</th>
+        <th>Fatura Vergi Dairesi</th>
+        <th>Teslim Eden</th>
+        <th>Teslim Alan</th>
+        <th>Fatura Toplam</th>
+        <th>Fatura Güncelle</th>
+        <th>Fatura Detay</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.FaturaID</td>
+    <td>@item.FaturaSeriNo</td>
+    <td>@item.FaturaSıraNo</td>
+    <td>@item.Tarih</td>
+    <td>@item.Saat</td>
+    <td>@item.VergiDairesi</td>
+    <td>@item.TeslimEden</td>
+    <td>@item.TeslimAlan</td>
+    <td>@item.ToplamTutar</td>
+
+
+    <td><a href="/Fatura/FaturaGetir/@item.FaturaID" class="btn btn-outline-primary">Fatura Güncelle</a></td>
+    <td><a href="/Fatura/FaturaDetay/@item.FaturaID" class="btn btn-outline-info">Fatura Detay</a></td>
+</tr>
+    }
+</table>
+<a href="/Fatura/FaturaEkle/" class="btn btn-outline-success">Yeni Fatura Ekle</a>
+

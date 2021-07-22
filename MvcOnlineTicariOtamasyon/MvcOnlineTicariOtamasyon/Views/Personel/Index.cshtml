@@ -1,0 +1,50 @@
+﻿@using MvcOnlineTicariOtamasyon.Models.Sınıflar
+@model List<Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<table class="table table-bordered">
+    <tr>
+        <th>Personel ID</th>
+        <th>Personel Ad</th>
+        <th>Personel Soyad</th>
+        <th>Personel Durum</th>
+        <th>Personel Gorsel</th>
+        <th>Personel Departman</th>
+        <th>Aktif Pasif</th>
+        <th>Güncelle</th>
+        <th>Satışlar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PersonelID</td>
+            <td>@item.PersonelAd</td>
+            <td>@item.PersonelSoyad</td>
+            @if (item.durum == true)
+            {
+                <td> <span class="badge badge-success">Aktif</span></td>
+            }
+            @if (item.durum == false)
+            {
+                <td> <span class="badge badge-danger">Pasif</span></td>
+            }
+            <td>@item.PersonelGorsel</td>
+            <td>@item.Departman.DepartmanAd</td>
+            @if (item.durum == true)
+            {
+                <td><a href="/Personel/PersonelSil/@item.PersonelID" class="btn btn-danger">Pasif Yap</a></td>
+            }
+            @if (item.durum == false)
+            {
+                <td><a href="/Personel/PersonelSil/@item.PersonelID" class="btn btn-success">Aktif Yap</a></td>
+            }
+
+            <td><a href="/Personel/PersonelGetir/@item.PersonelID" class="btn btn-outline-primary">Personel Güncelle</a></td>
+            <td><a href="/Departman/DepartmanPersonelSatis/@item.PersonelID" class="btn btn-outline-info">Personel Detay</a></td>
+        </tr>
+    }
+</table>
+<a href="/Personel/PersonelEkle/" class="btn btn-outline-success">Yeni Personel Ekle</a>
+

@@ -1,0 +1,45 @@
+﻿@using MvcOnlineTicariOtamasyon.Models.Sınıflar
+@model List<Departman>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>Departman ID</th>
+        <th>Departman AD</th>
+        <th>Departman Durum</th>
+        <th>Departman Aktif-Pasif</th>
+        <th>Departman Güncelle</th>
+        <td>Departman Detay</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.DepartmanID</td>
+            <td>@item.DepartmanAd</td>
+            @if (item.Durum == true)
+            {
+                <td> <span class="badge badge-success">Aktif</span></td>
+            }
+            @if (item.Durum == false)
+            {
+                <td> <span class="badge badge-danger">Pasif</span></td>
+            }
+            @if (item.Durum == true)
+            {
+                <td><a href="/Departman/DepartmanSil/@item.DepartmanID" class="btn btn-danger">Pasif Yap</a></td>
+            }
+            @if (item.Durum == false)
+            {
+                <td><a href="/Departman/DepartmanSil/@item.DepartmanID" class="btn btn-success">Aktif Yap</a></td>
+            }
+
+            <td><a href="/Departman/DepartmanGetir/@item.DepartmanID" class="btn btn-outline-primary">Departman Güncelle</a></td>
+            <td><a href="/Departman/DepartmanDetay/@item.DepartmanID" class="btn btn-outline-info">Departman Detay</a></td>
+        </tr>
+    }
+</table>
+<a href="/Departman/DepartmanEkle/" class="btn btn-outline-success">Yeni Departman Ekle</a>
+
+
