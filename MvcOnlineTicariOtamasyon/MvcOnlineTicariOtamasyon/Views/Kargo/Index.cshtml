@@ -1,0 +1,39 @@
+﻿@using MvcOnlineTicariOtamasyon.Models.Sınıflar
+@model List<KargoDetay>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Kargolar</h2>
+<br />
+@using (Html.BeginForm("Index", "Kargo", FormMethod.Get))
+{
+    <p>
+            Kargo Takip No : @Html.TextBox("P")
+            <input type="submit" value="Ara" class="btn btn-primary" style="width:150px" />
+    </p>
+}
+<table class="table table-striped" style="margin-top:20px;">
+    <tr style="background-color:rgb(252,178,22)">
+        <th>Personel</th>
+        <th>Alıcı</th>
+        <th>Takip Kodu</th>
+        <th>Tarih</th>
+        <th>Detaylar</th>
+        <th>QR Code</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Personel</td>
+            <td>@item.Alici</td>
+            <td>@item.TakipKodu</td>
+            <td>@item.Tarih.ToShortDateString()</td>
+            <td><a href="/Kargo/KargoDetay/@item.TakipKodu" class="btn btn-outline-primary">Kargo Detay</a></td>
+            <td><a href="/Kargo/Index2/@item.KargoDetayID" class="btn btn-success">QR Code</a></td>
+        </tr>
+    }
+</table>
+<a href="/Kargo/KargoEkle/" class="btn btn-outline-success">Yeni Kargo Girişi</a>
+

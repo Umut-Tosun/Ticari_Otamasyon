@@ -6,9 +6,8 @@
 }
 <table class="table table-bordered" style="margin-top:20px;">
     <tr>
-        <th>Fatura ID</th>
-        <th>Fatura Seri No</th>
-        <th>Fatura Sıra No</th>
+        <th>#</th>
+        <th>Fatura Seri Sıra No</th>
         <th>Fatura Tarih</th>
         <th>Fatura Saat</th>
         <th>Fatura Vergi Dairesi</th>
@@ -17,25 +16,56 @@
         <th>Fatura Toplam</th>
         <th>Fatura Güncelle</th>
         <th>Fatura Detay</th>
+        <th>Yeni Kalem</th>
     </tr>
     @foreach (var item in Model)
     {
 <tr>
     <td>@item.FaturaID</td>
-    <td>@item.FaturaSeriNo</td>
-    <td>@item.FaturaSıraNo</td>
-    <td>@item.Tarih</td>
+    <td>@item.FaturaSeriNo @item.FaturaSıraNo</td>
+    <td>@item.Tarih.ToShortDateString()</td>
     <td>@item.Saat</td>
     <td>@item.VergiDairesi</td>
     <td>@item.TeslimEden</td>
     <td>@item.TeslimAlan</td>
-    <td>@item.ToplamTutar</td>
+    <td>@item.ToplamTutar ₺</td>
 
 
     <td><a href="/Fatura/FaturaGetir/@item.FaturaID" class="btn btn-outline-primary">Fatura Güncelle</a></td>
     <td><a href="/Fatura/FaturaDetay/@item.FaturaID" class="btn btn-outline-info">Fatura Detay</a></td>
+    <td><a href="#" class="btn btn-success">Yeni Kalem</a></td>
 </tr>
     }
 </table>
 <a href="/Fatura/FaturaEkle/" class="btn btn-outline-success">Yeni Fatura Ekle</a>
+<br />
+<br />
+<button type="button" class="btn btn-outline-danger"data-toggle="modal"data-target="#Modal1">Pop Up Penceresi</button>
+<div class="modal"id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Pop Up Dialog Ekranı</h2>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Seri No</th>
+                        <th>Sıra No</th>
+                        <th>Tutar</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                <tr>
+                    <td>@item.FaturaSeriNo</td>
+                    <td>@item.FaturaSıraNo</td>
+                    <td>@item.ToplamTutar</td>
+                </tr>
+                    }
+                </table>
+                <button type="button" class="btn btn-danger"data-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
 

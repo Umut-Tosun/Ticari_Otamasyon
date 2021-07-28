@@ -4,12 +4,18 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <h2>Yeni Kategori Ekleme Sayfası</h2>
 <br />
 <form class="form-group" method="post">
-    @Html.LabelFor(x=>x.KategoriAd)
+    @Html.LabelFor(x => x.KategoriAd)
     @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
     <br />
-    <button class="btn btn-outline-primary">Yeni Kategori Ekle</button>
+    <button class="btn btn-outline-primary" id="btn1">Yeni Kategori Ekle</button>
+    <script>
+        $('#btn1').click(function ()){
+            alert("Kategori Başarılı Şekilde Eklendi")
+        }
+    </script>
 </form>
 

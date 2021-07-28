@@ -1,0 +1,52 @@
+﻿@using MvcOnlineTicariOtamasyon.Models.Sınıflar
+@model List<Cariler>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Cari Tablosu</h3>
+
+                <div class="card-tools">
+                  
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Cari AD</th>
+                            <th>Cari Soyad</th>
+                            <th>Cari Şehir</th>
+                            <th>Cari Mail</th>
+                            <th>Cari Durum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.CariID</td>
+                                <td>@item.CariAd</td>
+                                <td>@item.CariSoyad</td>
+                                <td>@item.CariSehir</td>
+                                <td>@item.CariMail</td>
+                                @if (item.durum == true)
+                                {
+                                    <td> <span class="badge badge-success">Aktif</span></td>
+                                }
+                                @if (item.durum == false)
+                                {
+                                    <td> <span class="badge badge-danger">Pasif</span></td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</div>

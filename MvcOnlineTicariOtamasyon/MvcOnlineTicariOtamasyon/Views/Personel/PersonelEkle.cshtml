@@ -6,6 +6,8 @@
 <br />
 <h2>Yeni Personel Ekleme Sayfası</h2>
 <br />
+@using (Html.BeginForm("PersonelEkle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
 <form class="form-group" method="post">
     @Html.HiddenFor(x => x.PersonelID)
 
@@ -16,7 +18,10 @@
     @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.PersonelGorsel)
-    @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+    <br />
+    <input type="file" name="PersonelGorsel" />
+    @*@Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })*@
+    <br />
     <br />
     @Html.LabelFor(x => x.durum)
     @Html.TextBoxFor(x => x.durum, new { @class = "form-control" })
@@ -28,4 +33,4 @@
 
 
 </form>
-
+}

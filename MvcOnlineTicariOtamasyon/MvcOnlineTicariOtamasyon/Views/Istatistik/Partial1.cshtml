@@ -1,0 +1,75 @@
+﻿@model IEnumerable<MvcOnlineTicariOtamasyon.Models.Sınıflar.SınıfGrup2>
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Departman - Personel Tablosu</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Departman</th>
+                    <th>Progress Bar</th>
+                    <th style="width: 40px">Label</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int sirano = 0;}
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@{sirano++;} @sirano</td>
+                        <td>@item.Departman</td>
+                        <td>
+                            @if (item.sayi == 1)
+                            {
+                                <div class="progress progress-xs progress-striped active">
+                                    <div class="progress-bar bg-danger" style="width: 15%"></div>
+                                </div>
+                            }
+                            @if (item.sayi == 2)
+                            {
+                                <div class="progress progress-xs progress-striped active">
+                                    <div class="progress-bar bg-warning" style="width: 30%"></div>
+                                </div>
+
+                            }
+                            @if (item.sayi == 3)
+                            {
+                                <div class="progress progress-xs progress-striped active">
+                                    <div class="progress-bar bg-primary" style="width: 45%"></div>
+                                </div>
+                            }
+                            @if (item.sayi >= 4)
+                            {
+                                <div class="progress progress-xs progress-striped active">
+                                    <div class="progress-bar bg-cyan" style="width: 70%"></div>
+                                </div>
+
+                            }
+                        </td>
+                        @if (item.sayi == 1)
+                        {
+                            <td><span class="badge bg-danger">@item.sayi%</span></td>
+                        }
+                        @if (item.sayi == 2)
+                        {
+                            <td><span class="badge bg-warning">@item.sayi%</span></td>
+                        }
+                        @if (item.sayi == 3)
+                        {
+                            <td><span class="badge bg-primary">@item.sayi%</span></td>
+                        }
+                        @if (item.sayi >= 4)
+                        {
+                            <td><span class="badge bg-cyan">@item.sayi%</span></td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->

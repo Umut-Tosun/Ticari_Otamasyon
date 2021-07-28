@@ -1,0 +1,27 @@
+﻿@using MvcOnlineTicariOtamasyon.Models.Sınıflar
+@model List<SatisHareket> 
+@{
+    ViewBag.Title = "Siparislerim";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+<br />
+<h2>Sipariş Geçmişim</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Ürün</th>
+        <th>Tarih</th>
+        <th>Adet</th>
+        <th>Toplam Tutar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Urun.UrunAd</td>
+            <td>@item.Tarih.ToShortDateString()</td>
+            <td>@item.Adet</td>
+            <td>@item.ToplamTutar</td>
+        </tr>
+    }
+</table>
+

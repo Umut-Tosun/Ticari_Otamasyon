@@ -30,7 +30,7 @@
             {
                 <td> <span class="badge badge-danger">Pasif</span></td>
             }
-            <td>@item.PersonelGorsel</td>
+            <td><img src="@item.PersonelGorsel"style="height:100px"/></td>
             <td>@item.Departman.DepartmanAd</td>
             @if (item.durum == true)
             {
@@ -46,5 +46,8 @@
         </tr>
     }
 </table>
-<a href="/Personel/PersonelEkle/" class="btn btn-outline-success">Yeni Personel Ekle</a>
+<div>
+    <a href="/Personel/PersonelEkle/" class="btn btn-outline-success">Yeni Personel Ekle</a>
+    <a href="/Personel/PersonelListesi/" class="btn btn-outline-primary">Detaylı Personel Sayfasına Git</a>
+</div>
 

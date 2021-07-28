@@ -4,16 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcOnlineTicariOtamasyon.Models.Sınıflar;
+using PagedList;
+
 namespace MvcOnlineTicariOtamasyon.Controllers
 {
     public class UrunController : Controller
     {
         Context c = new Context();
         // GET: Urun
-        public ActionResult Index()
+        public ActionResult Index(int? sayfa, string p)
         {
-            var urunler = c.Uruns.ToList();
-            return View(urunler);
+            var degerler = c.Uruns.Where(c => c.UrunAd.StartsWith(p) || p == null).ToList().ToPagedList(sayfa ?? 1, 4);
+
+            return View(degerler);
         }
         [HttpGet]
         public ActionResult YeniUrun()
@@ -87,6 +90,30 @@ namespace MvcOnlineTicariOtamasyon.Controllers
         {
             var degerler = c.Uruns.ToList();
             return View(degerler);
+        }
+        [HttpGet]
+        public ActionResult YeniSatis(int id)
+        {
+            List<SelectListItem> deger1 = (from x in c.Personels.Where(x => x.Departman.DepartmanAd == "Satış Temsilcisi").ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.PersonelAd + " " + x.PersonelSoyad,
+                                               Value = x.PersonelID.ToString()
+
+                                           }).ToList();
+            ViewBag.deger1 = deger1;
+            var deger2 = c.Uruns.Find(id);
+            ViewBag.deger2 = deger2.UrunID;
+            ViewBag.deger3 = deger2.SatisFiyat;
+            return View();
+        }      
+        [HttpPost]
+        public ActionResult YeniSatis(SatisHareket s)
+        {
+            s.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+            c.SatisHarekets.Add(s);
+            c.SaveChanges();
+            return RedirectToAction("Index","Satis");
         }
     }
 }

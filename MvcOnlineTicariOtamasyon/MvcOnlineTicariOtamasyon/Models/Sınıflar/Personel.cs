@@ -11,9 +11,11 @@ namespace MvcOnlineTicariOtamasyon.Models.Sınıflar
     {
         [Key]
         public int PersonelID { get; set; }
+        [Display(Name ="Personel Ad")]
         [Column(TypeName = "VarChar")]
         [StringLength(30)]
         public string PersonelAd { get; set; }
+        [Display(Name = "Personel Soyad")]
         [Column(TypeName = "VarChar")]
         [StringLength(30)]
         public string PersonelSoyad { get; set; }
@@ -21,6 +23,13 @@ namespace MvcOnlineTicariOtamasyon.Models.Sınıflar
         [StringLength(300)]
         
         public string PersonelGorsel { get; set; }
+        [Display(Name = "Personel Gorsel")]
+        [Column(TypeName = "VarChar")]
+        [StringLength(30)]
+        public string PersonelMail { get; set; }
+        [Column(TypeName = "VarChar")]
+        [StringLength(30)]
+        public string PersonelTelefon { get; set; }
         public bool durum { get; set; }
         public int Departmanid { get; set; }
         public virtual Departman Departman { get; set; }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -31,6 +32,23 @@ namespace MvcOnlineTicariOtamasyon.Controllers
         [HttpPost]
         public ActionResult PersonelEkle(Personel p)
         {
+            if (Request.Files.Count > 0)
+
+            {
+
+                var extention = Path.GetExtension(Request.Files[0].FileName);
+
+                var randomName = string.Format($"{DateTime.Now.Ticks}{extention}");
+
+                //var randomName = string.Format($"{Guid.NewGuid().ToString().Replace("-", "")}{extention}");
+
+                p.PersonelGorsel = "/Images/" + randomName;
+
+                var path = "~/Images/" + randomName;
+
+                Request.Files[0].SaveAs(Server.MapPath(path));
+
+            }
             p.durum = true;
             c.Personels.Add(p);
             c.SaveChanges();
@@ -65,16 +83,60 @@ namespace MvcOnlineTicariOtamasyon.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult PersonelGuncelle(Personel p)
+        public ActionResult PersonelGuncelle(Personel p, HttpPostedFileBase PersonelFotograf)
         {
+
+            if (Request.Files.Count > 0)
+
+            {
+
+                var extention = Path.GetExtension(Request.Files[0].FileName);
+
+                var randomName = string.Format($"{DateTime.Now.Ticks}{extention}");
+
+                //var randomName = string.Format($"{Guid.NewGuid().ToString().Replace("-", "")}{extention}");
+
+                p.PersonelGorsel = "/Images/" + randomName;
+
+                var path = "~/Images/" + randomName;
+
+                Request.Files[0].SaveAs(Server.MapPath(path));
+
+            }
             var deger = c.Personels.Find(p.PersonelID);
             deger.PersonelAd = p.PersonelAd;
             deger.PersonelSoyad = p.PersonelSoyad;
             deger.PersonelGorsel = p.PersonelGorsel;
             deger.durum = p.durum;
             deger.Departmanid = p.Departmanid;
+            if (ModelState.IsValid)
+
+            {
+                if (PersonelFotograf != null)
+
+                {
+
+                    string dosyaadi = Path.GetFileName(PersonelFotograf.FileName);
+
+
+
+                    string yol = "/Image/" + dosyaadi;
+
+                    PersonelFotograf.SaveAs(Server.MapPath(yol));
+
+                  deger.PersonelGorsel = yol;
+
+                }
+
+            }
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public ActionResult PersonelListesi()
+        {
+            var deger = c.Personels.ToList();
+            
+            return View(deger);
         }
     }
 }

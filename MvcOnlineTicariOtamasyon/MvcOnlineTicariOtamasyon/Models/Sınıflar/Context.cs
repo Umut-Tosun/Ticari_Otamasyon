@@ -17,5 +17,9 @@ namespace MvcOnlineTicariOtamasyon.Models.Sınıflar
         public DbSet<Personel>Personels  {get;set;}
         public DbSet<SatisHareket>SatisHarekets  {get;set;}
         public DbSet<Urun>Uruns  {get;set;}
+        public DbSet<Detay>Detays { get; set; }
+        public DbSet<Yapilicaklar>yapilicaklars { get; set; }
+        public DbSet<KargoDetay>kargoDetays { get; set; }
+        public DbSet<KargoTakip>kargoTakips { get; set; }
     }
 }

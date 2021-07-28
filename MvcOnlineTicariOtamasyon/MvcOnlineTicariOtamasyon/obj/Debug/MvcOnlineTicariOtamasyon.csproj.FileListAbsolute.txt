@@ -30,7 +30,6 @@ C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOta
 C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\roslyn\System.IO.Compression.ZipFile.dll
 C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\roslyn\System.Net.Http.dll
 C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\roslyn\System.Net.Sockets.dll
 C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
@@ -50,20 +49,6 @@ C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOta
 C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\roslyn\vbc.rsp
 C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\roslyn\VBCSCompiler.exe
 C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\Antlr3.Runtime.dll
-C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\EntityFramework.dll
-C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\EntityFramework.SqlServer.dll
-C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\Newtonsoft.Json.dll
-C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\System.Web.Helpers.dll
-C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\System.Web.Mvc.dll
-C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\System.Web.Optimization.dll
-C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\System.Web.Razor.dll
-C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\System.Web.WebPages.dll
-C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\System.Web.WebPages.Razor.dll
-C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\WebGrease.dll
 C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\EntityFramework.xml
 C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\EntityFramework.SqlServer.xml
 C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\System.Web.Helpers.xml
@@ -83,3 +68,7 @@ C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOta
 C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\obj\Debug\MvcOnlineTicariOtamasyon.dll
 C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\obj\Debug\MvcOnlineTicariOtamasyon.pdb
 C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\obj\Debug\MvcOnlineTicariOtamasyon.csprojAssemblyReference.cache
+C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\PagedList.xml
+C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\PagedList.Mvc.xml
+C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\obj\Debug\MvcOnlineTicariOtamasyon.Migrations.testtt.resources
+C:\Users\Teknosa Casper\source\repos\MvcOnlineTicariOtamasyon\MvcOnlineTicariOtamasyon\bin\QRCoder.dll

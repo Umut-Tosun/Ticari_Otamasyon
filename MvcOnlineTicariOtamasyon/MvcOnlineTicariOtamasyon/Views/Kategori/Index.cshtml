@@ -1,12 +1,14 @@
 ﻿@using MvcOnlineTicariOtamasyon.Models.Sınıflar
-@model List  <Kategori>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Kategori>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<table class="table table-bordered"style="margin-top:20px;">
+<table class="table table-bordered" style="margin-top:20px;">
     <tr>
-        <th>Kategori ID</th>
+        <th>#</th>
         <th>Kategori AD</th>
         <th>Kategori Sil</th>
         <th>Kategori Güncelle</th>
@@ -21,4 +23,17 @@
         </tr>
     }
 </table>
+@Html.PagedListPager((IPagedList)Model, sayfa=> Url.Action("Index", new { sayfa }), new PagedListRenderOptions
+
+{
+
+    LiElementClasses = new List<string>
+
+    {"page-link"}
+
+}
+
+)
+
+
 <a href="/Kategori/KategoriEkle/" class="btn btn-outline-success">Yeni Kategori Ekle</a>

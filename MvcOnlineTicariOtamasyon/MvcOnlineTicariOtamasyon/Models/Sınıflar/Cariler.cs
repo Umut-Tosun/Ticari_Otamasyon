@@ -31,7 +31,13 @@ namespace MvcOnlineTicariOtamasyon.Models.Sınıflar
         [MinLength(2, ErrorMessage = "En az 5 Karakter Olmalıdır .")]
         [Required(ErrorMessage = "Bu Alan Boş Geçilemez !")]
         public string CariMail { get; set; }
-       
+
+        [Column(TypeName = "VarChar")]
+        [StringLength(30, ErrorMessage = "En Fazla 30 Karakter Girebilirsiniz .")]
+        [MinLength(2, ErrorMessage = "En az 5 Karakter Olmalıdır .")]
+        [Required(ErrorMessage = "Bu Alan Boş Geçilemez !")]
+        public string CariSifre { get; set; }
+
         public bool durum { get; set; }
         public ICollection<SatisHareket> SatisHarekets { get; set; }
 

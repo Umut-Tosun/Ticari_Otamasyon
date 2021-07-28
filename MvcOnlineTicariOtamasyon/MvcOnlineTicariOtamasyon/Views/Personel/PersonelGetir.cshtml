@@ -6,7 +6,7 @@
 <br />
 <h2>Personel Güncelleme Sayfası</h2>
 <br />
-@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.HiddenFor(x => x.PersonelID)
 
@@ -17,7 +17,9 @@
     @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
     <br />
     @Html.Label("Personel Gorsel")
-    @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+    <br />
+    <input type="file" name="PersonelGorsel" />
+    @*@Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })*@
     <br />
     @Html.Label("Personel Durum")
     @Html.TextBoxFor(x => x.durum, new { @class = "form-control" })
